@@ -38,20 +38,6 @@ const BalanceSpan = styled.span`
     
 `;
 
-// const BalanceEyeSpan = styled.span` 
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     //background-color: skyblue;
-//     width: 15%;
-// `;
-// const BalanceThumbSpan = styled.span` 
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     //background-color: skyblue;
-//     //width: 15%;
-// `;
 const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength - 3) + '...';

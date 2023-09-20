@@ -27,12 +27,6 @@ function App() {
         </ListForm>
       </Form>
 
-      {/* <Form>
-        <Header title="짧"/>
-        <ListForm>
-          <BalanceList />
-        </ListForm>
-      </Form> */}
     </div>
     
     
