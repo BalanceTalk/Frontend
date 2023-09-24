@@ -1,0 +1,80 @@
+#header {
+    background-color: #D4D2E3;
+    color: #5D5A88;
+    padding: 20px;
+    position: relative;
+    align-items: center;
+    grid-area: header;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    margin : auto;
+    margin-bottom: 50px;
+  }
+  
+  #header h2 {
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    color: #5D5A88;
+    text-shadow: 2px 2px 2px #b4b3fe;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-buttons {
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    background-color: white;
+  }
+  
+  .login-buttons:hover {
+    background-color: #b4b3fe;
+  }
+  
+  .register-buttons {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    background-color: #5D5A88;
+  }
+  
+  .register-buttons:hover {
+    background-color: #605DEC;
+  }
+  
+  #new {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    background-color: #605DEC;
+    text-decoration-line: none;
+  }
+  
+  #new:hover {
+    background-color: #9D7ECE;
+  }
