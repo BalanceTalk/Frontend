@@ -1,58 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import styled from '@emotion/styled';
-import { FaEye,FaThumbsUp } from 'react-icons/fa';
+import { FaEye, FaThumbsUp } from 'react-icons/fa';
+import '../styles/BalanceList.css';
 import { Link } from 'react-router-dom';
 
-const BalanceForm = styled.div`
-    width: 95%;
-    display: flex;
-    flex-direction : column;
-    justify-content: space-around;  //가로
-    align-content: space-around;    //세로
-`;
-
-const BalanceItem = styled.div` 
-    width:100%;
-    display: flex;
-    justify-content: space-around;
-    align-content: space-between;
-    font-size: 18px;
-    align-items: center;
-
-`;
-const BalanceTitleSpan = styled.span` 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    //background-color: skyblue;
-    width: 60%;
-    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
-    overflow: hidden; /* 넘치는 텍스트를 숨김 */
-    text-overflow: ellipsis; /* 넘치는 텍스트를 ...으로 표시 */
-`;
-
-const BalanceSpan = styled.span` 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    //background-color: skyblue;
-    
-`;
-
-// const BalanceEyeSpan = styled.span` 
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     //background-color: skyblue;
-//     width: 15%;
-// `;
-// const BalanceThumbSpan = styled.span` 
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     //background-color: skyblue;
-//     //width: 15%;
-// `;
 const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength - 3) + '...';
@@ -85,22 +35,21 @@ const BalanceList = () => {
   const slicedData = balanceData.slice(0, 5);
   return (
 
-    <BalanceForm>
+    <div className='balance-form'>
       {slicedData.map(item => (
-        <BalanceItem key={item.TITLE} onClick={() => handleItemClick(item)}>
-            <BalanceTitleSpan title={item.TITLE}>
-              <Link to="/vote" style={{ textDecoration: 'none' }}>{truncateText(item.TITLE, 15)}</Link>
-            </BalanceTitleSpan>
-          
-            <BalanceSpan>
+        <div className='balance-item' key={item.TITLE} onClick={() => handleItemClick(item)}>
+            <span className='balance-title-span' title={item.TITLE}>
+              <Link to='vote' style={{ textDecoration: 'none' }}>{truncateText(item.TITLE, 15)}</Link>
+            </span>
+            <span className='balance-span'>
                 <FaEye style={{ marginRight: '5px' }} />{item.PLAYER_COUNT}
-            </BalanceSpan>
-            <BalanceSpan>
+            </span>
+            <span className='balance-span'>
                 <FaThumbsUp style={{ marginRight: '5px' }} />{item.LIKES}
-            </BalanceSpan>
-        </BalanceItem>
+            </span>
+        </div>
       ))}
-    </BalanceForm>
+    </div>
   );
 };
 
