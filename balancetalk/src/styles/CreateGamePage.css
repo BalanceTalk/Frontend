@@ -1,0 +1,47 @@
+.create-game-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #5D5A88;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.title-container,
+.option-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.title, .option,
+.option-description {
+  background-color: #F5EFFF;
+  padding: 10px;
+  border: 1px solid #605DEC;
+  border-radius: 10px;
+  outline: none;
+  width: 100%;
+}
+
+.create-button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+  background-color: #5D5A88;
+}
+
+.create-button:hover {
+  background-color: #605DEC;
+}
