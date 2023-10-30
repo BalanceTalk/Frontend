@@ -3,6 +3,7 @@ import GameTitle from "../components/GameTitle.js";
 import GameVoteButton from "../components/GameVoteButton.js";
 import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 const gameData = [
   {
@@ -32,17 +33,27 @@ const GameVoteForm = styled.div`
 `;
 
 function VoteGamePage({ data = gameData }) {
-
-  const history = useNavigate(); // useHistory 훅 사용 -> useNavigate로 바뀜
-
-  const handleButtonClick = (gameIndex, optionIndex) => {
+  const navigate = useNavigate();
+  const handleButtonClick = (gameIndex, optionIndex, data) => {
     // gameIndex와 optionIndex에 따라 적절한 경로로 이동하도록 처리
-    if (optionIndex === 0) {
-      history("../left");
-    } else if (optionIndex === 1) {
-      history("../right");
+      switch (data[0].gameTitle) {
+        case "내가 다음 생에 태어나게 된다면?":
+          navigate(`/war/1-${optionIndex+1}`);
+          break;
+        case "일주일 동안 한가지를 할 수 없다면?":
+          navigate(`/war/2-${optionIndex+1}`);
+          break;
+        case "똥을 먹어보자":
+          navigate(`/war/3-${optionIndex+1}`);
+          break;
+        case "돈이 좋아?, 일이 싫어?":
+          navigate(`/war/4-${optionIndex+1}`);
+          break;
+        case "카레냐 똥이냐?":
+          navigate(`/war/5-${optionIndex+1}`);
+          break;
+      }  
     }
-  };
 
   return (
     <div>
@@ -54,7 +65,7 @@ function VoteGamePage({ data = gameData }) {
             <GameVoteButton
               //key={`${gameIndex}-${optionIndex}`}
               color={optionIndex === 0 ? "skyblue" : "pink"}
-              onClick={() => handleButtonClick(gameIndex, optionIndex)}
+              onClick={() => handleButtonClick(gameIndex, optionIndex, data)}
               title={option.optionTitle}
               description={option.optionDescription}
               url={option.optionImage}
