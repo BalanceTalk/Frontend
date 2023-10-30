@@ -8,15 +8,16 @@ function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    alert("로그인 오류");
   };
 
   return (
     <div>
       <Headers newTag={false} />
-    <div className="login-form"> {/* 클래스 이름을 "login-form"으로 변경 */}
+    <div className="login-form">
       <h2>로그인</h2>
       <form onSubmit={handleSubmit}>
-        <div className="login-container"> {/* 클래스 이름을 "login-container"으로 변경 */}
+        <div className="login-container">
           <label>이메일</label>
           <input
             className='login-input'
@@ -26,7 +27,7 @@ function LoginPage() {
             required
           />
         </div>
-        <div className="login-container"> {/* 클래스 이름을 "login-container"으로 변경 */}
+        <div className="login-container">
           <label>비밀번호</label>
           <input
             className='login-input'

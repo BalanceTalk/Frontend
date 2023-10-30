@@ -13,7 +13,7 @@ function CreateGamePage() {
   const [image2, setImage2] = React.useState(null);
 
   const handleCreateGame = () => {
-
+    alert("게임 생성 오류");
   };
   const handleImage1Change = (e) => {
     const file = e.target.files[0];

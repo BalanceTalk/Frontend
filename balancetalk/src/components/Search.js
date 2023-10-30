@@ -5,7 +5,7 @@ function Search() {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = () => {
-    alert(`/search?query=${searchTerm}`);
+    alert(`검색 불가: ${searchTerm}`);
   };
 
   const handleEnterKey = (e) => {
@@ -19,7 +19,7 @@ function Search() {
       <input
         type="text"
         className="search-input"
-        placeholder="검색어를 입력하세요"
+        placeholder="검색창 공사중"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyUp={handleEnterKey}

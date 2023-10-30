@@ -18,7 +18,7 @@ function RegisterPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    alert("회원가입 오류");
   };
 
   return (

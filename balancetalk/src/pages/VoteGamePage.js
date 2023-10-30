@@ -4,6 +4,23 @@ import GameVoteButton from "../components/GameVoteButton.js";
 import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
 
+const gameData = [
+  {
+    gameTitle: "undefined",
+    options: [
+      {
+        optionTitle: "undefined",
+        optionDescription: "undefined",
+        optionImage: " ",
+      },
+      {
+        optionTitle: "undefined",
+        optionDescription: "undefined",
+        optionImage: " ",
+      },
+    ],
+  },
+];
 const GameVoteForm = styled.div`
   margin-top: 3%;
   display: flex;
@@ -14,24 +31,8 @@ const GameVoteForm = styled.div`
   align-content: space-around; //세로
 `;
 
-function VoteGamePage() {
-  const DummyData = [
-    {
-      gameTitle: "내가 다음 생에 태어나게 된다면?",
-      options: [
-        {
-          optionTitle: "인간으로 태어나기",
-          optionDescription: "단, 국가좌표는 랜덤",
-          optionImage: "https://source.unsplash.com/random/400x360",
-        },
-        {
-          optionTitle: "부잣집 고양이로 태어나기",
-          optionDescription: "단, 종은 랜덤",
-          optionImage: " ",
-        },
-      ],
-    },
-  ];
+function VoteGamePage({ data = gameData }) {
+
   const history = useNavigate(); // useHistory 훅 사용 -> useNavigate로 바뀜
 
   const handleButtonClick = (gameIndex, optionIndex) => {
@@ -46,13 +47,13 @@ function VoteGamePage() {
   return (
     <div>
       <Header newTag={false} />
-      <GameTitle title={DummyData[0].gameTitle} />
+      <GameTitle title={data[0].gameTitle} />
       <GameVoteForm>
-        {DummyData.map((game, gameIndex) =>
+        {data.map((game, gameIndex) =>
           game.options.map((option, optionIndex) => (
             <GameVoteButton
               //key={`${gameIndex}-${optionIndex}`}
-              color={optionIndex === 0 ? "skyblue" : "seagreen"}
+              color={optionIndex === 0 ? "skyblue" : "pink"}
               onClick={() => handleButtonClick(gameIndex, optionIndex)}
               title={option.optionTitle}
               description={option.optionDescription}
