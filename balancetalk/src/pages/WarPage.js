@@ -32,7 +32,7 @@ function WarPage({data, voteRate, com, side}) {
 
   return (
     <div>
-      <Header newTag={true} />
+      <Header newTag={false} />
       <br></br>
       <h2 id="title">{data[0].title}</h2>
       <br></br>
